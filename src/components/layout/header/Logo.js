@@ -4,10 +4,12 @@ import classes from "./Logo.module.css";
 
 function Logo() {
   return (
-    <NavLink to="">
-      <svg className={classes.logo}>
-        <use href="/images/logo.svg#Layer_1"></use>
-      </svg>
+    <NavLink className={classes.logoWrapper} to="/">
+      <img
+        className={classes.logo}
+        src="/images/logo.svg"
+        alt="DisneyPlus Hotstar"
+      />
     </NavLink>
   );
 }

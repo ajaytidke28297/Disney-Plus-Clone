@@ -1,4 +1,7 @@
 .logo {
-  fill: red;
-  height: 6rem;
+  width: 8rem;
+}
+
+.logoWrapper {
+  margin-left: 3.6rem;
 }

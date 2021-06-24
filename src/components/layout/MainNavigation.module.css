@@ -1,11 +1,25 @@
 .header {
-  height: 70px;
+  height: 7rem;
   background: #090b13;
   display: flex;
-  justify-content: center;
-  height: 5.5rem;
   width: 100%;
   font-size: 1.5rem;
   font-weight: 600;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.user-image {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 3.6rem;
 }
