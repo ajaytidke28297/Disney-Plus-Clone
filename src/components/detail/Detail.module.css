@@ -19,3 +19,56 @@
 .movie__title img {
   object-fit: contain;
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.play__button {
+  background: rgb(249, 249, 249);
+}
+
+.play__button:hover,
+.trailer__button:hover {
+  background: rgb(198, 198, 198);
+}
+
+.trailer__button {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgb(249, 249, 249);
+  color: rgb(249, 249, 249);
+}
+
+.add__button {
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.add__button span {
+  color: white;
+  font-size: 3rem;
+}
+
+.subtitle {
+  color: rgb(249, 249, 249);
+  font-size: 1.5rem;
+  font-weight: 400;
+  min-height: 2rem;
+  margin-top: 2.6rem;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 1.6rem;
+  color: rgb(249, 249, 249);
+}

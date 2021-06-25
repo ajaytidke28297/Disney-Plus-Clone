@@ -1,0 +1,13 @@
+.button {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  padding: 0 2.4rem;
+  height: 5.6rem;
+  border: none;
+  letter-spacing: 1.8px;
+  cursor: pointer;
+}
