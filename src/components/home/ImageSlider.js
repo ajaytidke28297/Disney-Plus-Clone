@@ -37,7 +37,7 @@ const Container = styled(Slider)`
 
   ul li button {
     &::before {
-      font-size: 10px;
+      font-size: 1rem;
       color: rgba(150, 158, 171);
     }
   }
