@@ -1,24 +1,35 @@
 import React from "react";
 import classes from "./Viewers.module.css";
+import Image from "../UI/Image";
 
 function Viewers() {
   return (
     <div className={classes.viewers}>
-      <div className={classes.img__wrapper}>
-        <img src="/images/viewers-disney.png" alt="disney" />
-      </div>
-      <div className={classes.img__wrapper}>
-        <img src="/images/viewers-pixar.png" alt="disney" />
-      </div>
-      <div className={classes.img__wrapper}>
-        <img src="/images/viewers-marvel.png" alt="disney" />
-      </div>
-      <div className={classes.img__wrapper}>
-        <img src="/images/viewers-starwars.png" alt="disney" />
-      </div>
-      <div className={classes.img__wrapper}>
-        <img src="/images/viewers-national.png" alt="disney" />
-      </div>
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/viewers-disney.png"
+        alt="disney"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/viewers-pixar.png"
+        alt="pixar"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/viewers-marvel.png"
+        alt="marvel"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/viewers-starwars.png"
+        alt="star wars"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/viewers-national.png"
+        alt="national geography"
+      />
     </div>
   );
 }

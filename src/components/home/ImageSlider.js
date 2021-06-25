@@ -4,28 +4,36 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import classes from "./ImageSlider.module.css";
+import Image from "../UI/Image";
 
 function ImageSlider() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoPlay: true,
+    autoplay: false,
+    autoplaySpeed: 5000,
   };
 
   return (
     <Container {...settings}>
-      <div className={classes.img__wrapper}>
-        <img src="/images/slider-badging.jpg" alt="sliding" />
-      </div>
-      <div className={classes.img__wrapper}>
-        <img src="/images/slider-badag.jpg" alt="sliding" />
-      </div>
-      <div className={classes.img__wrapper}>
-        <img src="/images/slider-badging.jpg" alt="sliding" />
-      </div>
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/slider-badging.jpg"
+        alt="sliding"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/slider-badag.jpg"
+        alt="sliding"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/slider-badging.jpg"
+        alt="sliding"
+      />
     </Container>
   );
 }
