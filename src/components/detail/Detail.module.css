@@ -1,0 +1,21 @@
+.img__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+  z-index: -10;
+}
+
+.movie__title {
+  height: 30vh;
+  min-height: 17rem;
+  width: 35vw;
+  min-width: 20rem;
+  box-shadow: none;
+}
+
+.movie__title img {
+  object-fit: contain;
+}

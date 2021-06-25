@@ -1,0 +1,26 @@
+.container {
+}
+
+.container h4 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.img__wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 3px solid rgba(249, 249, 249, 0.1);
+}
+
+.img__wrapper:hover {
+  transform: scale(1.05);
+  border-color: rgba(249, 249, 249, 0.8);
+  box-shadow: rgba(0 0 0 / 80%) 0px 4rem 5.8rem 1.6rem,
+    rgba(0 0 0 / 73%) 0px 3rem 2.2rem -1rem;
+}

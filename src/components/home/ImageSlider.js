@@ -10,11 +10,11 @@ function ImageSlider() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 5000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
   };
 
   return (
