@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Movies.module.css";
 import Image from "../UI/Image";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Movies() {
   const movieList = useSelector((state) => state.movie.movies);
@@ -12,11 +13,12 @@ function Movies() {
       <div className={classes.movies}>
         {movieList &&
           movieList.map((movie) => (
-            <Image
-              key={movie.id}
-              className={classes.img__wrapper}
-              imageSrc={movie.cardImg}
-            />
+            <Link key={movie.id} to={`/detail/${movie.id}`}>
+              <Image
+                className={classes.img__wrapper}
+                imageSrc={movie.cardImg}
+              />
+            </Link>
           ))}
       </div>
     </div>
