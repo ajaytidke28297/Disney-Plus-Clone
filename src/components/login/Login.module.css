@@ -1,0 +1,31 @@
+.CTA {
+  max-width: 65rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -7rem;
+}
+
+.CTA__btn {
+  width: 100%;
+  background: #0063e5;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.CTA__btn:hover {
+  background: #0483ee;
+}
+
+.description {
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.bottom {
+  width: 90%;
+}
