@@ -19,7 +19,7 @@ function Detail() {
           setMovie(doc.data());
         }
       });
-  }, []);
+  }, [id]);
 
   return (
     <Container>
