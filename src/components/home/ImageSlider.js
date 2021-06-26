@@ -13,7 +13,7 @@ function ImageSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
   };
 
@@ -31,7 +31,12 @@ function ImageSlider() {
       />
       <Image
         className={classes.img__wrapper}
-        imageSrc="/images/slider-badging.jpg"
+        imageSrc="/images/slider-scale.jpg"
+        alt="sliding"
+      />
+      <Image
+        className={classes.img__wrapper}
+        imageSrc="/images/slider-scales.jpg"
         alt="sliding"
       />
     </Container>
