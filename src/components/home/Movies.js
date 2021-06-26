@@ -5,7 +5,9 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Movies(props) {
-  const movieList = useSelector((state) => state.movie.movies.slice(0, 4));
+  const movieList = useSelector((state) =>
+    state.movie.movies.slice(props.l1, props.l2)
+  );
 
   return (
     <div className={classes.container}>

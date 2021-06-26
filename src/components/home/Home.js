@@ -22,9 +22,9 @@ function Home() {
     <Container>
       <ImageSlider />
       <Viewers />
-      <Movies type="Recommended movies" />
-      <Movies type="New on Disney+" />
-      <Movies type="Originals" />
+      <Movies type="Recommended movies" l1="0" l2="4" />
+      <Movies type="New on Disney+" l1="5" l2="9" />
+      <Movies type="Originals" l1="10" l2="14" />
     </Container>
   );
 }
