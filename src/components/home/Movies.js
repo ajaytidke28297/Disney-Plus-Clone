@@ -11,6 +11,7 @@ function Movies() {
     <div className={classes.container}>
       <h4>Recommended for you</h4>
       <div className={classes.movies}>
+        {movieList.length === 0 && <p>Loading...</p>}
         {movieList &&
           movieList.map((movie) => (
             <Link key={movie.id} to={`/detail/${movie.id}`}>

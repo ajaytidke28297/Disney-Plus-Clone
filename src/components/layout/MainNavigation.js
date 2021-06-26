@@ -16,8 +16,10 @@ function MainNavigation() {
   const loginHandler = () => {
     auth.signInWithPopup(provider).then((result) => {
       const user = result.user;
+      console.log(user);
       dispath(
         userActions.setUserLogin({
+          token: user.refreshToken,
           name: user.displayName,
           email: user.email,
           photo: user.photoURL,
