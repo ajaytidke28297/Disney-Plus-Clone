@@ -30,11 +30,9 @@ function Detail() {
             imageSrc={movie.backgroundImg}
             alt={movie.title}
           />
-          <Image
-            className={classes.movie__title}
-            imageSrc={movie.titleImg}
-            alt={movie.title}
-          />
+          <div className={classes.movie__title}>
+            <img src={movie.titleImg} alt={movie.title} />
+          </div>
           <div className={classes.controls}>
             <Button
               className={classes.play__button}
