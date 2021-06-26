@@ -4,14 +4,14 @@ import Image from "../UI/Image";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-function Movies() {
-  const movieList = useSelector((state) => state.movie.movies);
+function Movies(props) {
+  const movieList = useSelector((state) => state.movie.movies.slice(0, 4));
 
   return (
     <div className={classes.container}>
-      <h4>Recommended for you</h4>
+      <h4>{props.type}</h4>
       <div className={classes.movies}>
-        {movieList.length === 0 && <p>Loading...</p>}
+        {!movieList && <p>Loading...</p>}
         {movieList &&
           movieList.map((movie) => (
             <Link key={movie.id} to={`/detail/${movie.id}`}>

@@ -1,35 +1,42 @@
 import React from "react";
 import classes from "./Viewers.module.css";
-import Image from "../UI/Image";
 
 function Viewers() {
   return (
     <div className={classes.viewers}>
-      <Image
-        className={classes.img__wrapper}
-        imageSrc="/images/viewers-disney.png"
-        alt="disney"
-      />
-      <Image
-        className={classes.img__wrapper}
-        imageSrc="/images/viewers-pixar.png"
-        alt="pixar"
-      />
-      <Image
-        className={classes.img__wrapper}
-        imageSrc="/images/viewers-marvel.png"
-        alt="marvel"
-      />
-      <Image
-        className={classes.img__wrapper}
-        imageSrc="/images/viewers-starwars.png"
-        alt="star wars"
-      />
-      <Image
-        className={classes.img__wrapper}
-        imageSrc="/images/viewers-national.png"
-        alt="national geography"
-      />
+      <div className={classes.img__wrapper}>
+        <img src="/images/viewers-disney.png" alt="disney" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className={classes.img__wrapper}>
+        <img src="/images/viewers-pixar.png" alt="pixar" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className={classes.img__wrapper}>
+        <img src="/images/viewers-marvel.png" alt="marvel" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1564676115-marvel.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className={classes.img__wrapper}>
+        <img src="/images/viewers-starwars.png" alt="star wars" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1608229455-star-wars.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className={classes.img__wrapper}>
+        <img src="/images/viewers-national.png" alt="national geography" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source
+            src="/videos/1564676296-national-geographic.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
     </div>
   );
 }
