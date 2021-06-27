@@ -4,27 +4,63 @@ import ImageSlider from "./ImageSlider";
 import Viewers from "./Viewers";
 import Movies from "./Movies";
 import db from "../../firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { movieActions } from "../../store/movie-slice";
 
 function Home() {
+  let recommend = [];
+  let newDisney = [];
+  let original = [];
+  let trending = [];
+  const user = useSelector((state) => state.user);
+  const movieList = useSelector((state) => state.movie);
+
   const dispatch = useDispatch();
   useEffect(() => {
     db.collection("movies").onSnapshot((snapshot) => {
-      const tempMovies = snapshot.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
+      snapshot.docs.forEach((doc) => {
+        switch (doc.data().type) {
+          case "recommend":
+            recommend = [...recommend, { id: doc.id, ...doc.data() }];
+            break;
+          case "new":
+            newDisney = [...newDisney, { id: doc.id, ...doc.data() }];
+            break;
+          case "original":
+            original = [...original, { id: doc.id, ...doc.data() }];
+            break;
+          case "trending":
+            trending = [...trending, { id: doc.id, ...doc.data() }];
+            break;
+        }
       });
-      dispatch(movieActions.setMovies(tempMovies));
+      dispatch(
+        movieActions.setMovies({
+          recommend,
+          trending,
+          original,
+          newDisney,
+        })
+      );
     });
-  }, [dispatch]);
+  }, [user.name, dispatch]);
 
   return (
     <Container>
       <ImageSlider />
       <Viewers />
-      <Movies type="Recommended movies" l1="0" l2="4" />
-      <Movies type="New on Disney+" l1="5" l2="9" />
-      <Movies type="Originals" l1="10" l2="14" />
+      <Movies
+        type="Recommended movies"
+        cat="recommend"
+        movies={movieList.recommend}
+      />
+      <Movies
+        type="New on Disney+"
+        cat="newDisney"
+        movies={movieList.newDisney}
+      />
+      <Movies type="Originals" cat="original" movies={movieList.original} />
+      <Movies type="Trending" cat="trending" movies={movieList.trending} />
     </Container>
   );
 }

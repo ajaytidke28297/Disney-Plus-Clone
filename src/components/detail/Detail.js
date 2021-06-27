@@ -4,22 +4,23 @@ import styled from "styled-components";
 import Image from "../UI/Image";
 import Button from "../UI/Button";
 import { useParams } from "react-router";
-import db from "../../firebase";
+import { useSelector } from "react-redux";
 
 function Detail() {
-  const [movie, setMovie] = useState(null);
-  const { id } = useParams();
+  const { id, cat } = useParams();
+  const movieList = useSelector((state) => state.movie);
 
-  useEffect(() => {
-    db.collection("movies")
-      .doc(id)
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          setMovie(doc.data());
-        }
-      });
-  }, [id]);
+  const movie = movieList[cat].find((item) => item.id === id);
+  // useEffect(() => {
+  //   db.collection("movies")
+  //     .doc(id)
+  //     .get()
+  //     .then((doc) => {
+  //       if (doc.exists) {
+  //         setMovie(doc.data());
+  //       }
+  //     });
+  // }, [id]);
 
   return (
     <Container>

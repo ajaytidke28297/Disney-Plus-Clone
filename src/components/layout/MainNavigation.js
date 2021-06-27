@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./MainNavigation.module.css";
 import Logo from "./header/Logo";
 import NavMenuItem from "./header/NavMenuItem";
@@ -13,27 +13,48 @@ function MainNavigation() {
   const navMenuList = useSelector((state) => state.nav.items);
   const user = useSelector((state) => state.user);
 
-  const loginHandler = () => {
-    auth.signInWithPopup(provider).then((result) => {
-      const user = result.user;
-      console.log(user);
-      dispath(
-        userActions.setUserLogin({
-          token: user.refreshToken,
-          name: user.displayName,
-          email: user.email,
-          photo: user.photoURL,
-        })
-      );
-      history.push("/");
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user);
+        history.push("/home");
+      }
     });
+  }, [user.name, history]);
+
+  const loginHandler = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        setUser(result.user);
+        history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const setUser = (user) => {
+    dispath(
+      userActions.setUserLogin({
+        token: user.refreshToken,
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
   };
 
   const logoutHandler = () => {
-    auth.signOut().then(() => {
-      dispath(userActions.setSignOut());
-      history.push("/login");
-    });
+    auth
+      .signOut()
+      .then(() => {
+        dispath(userActions.setSignOut());
+        history.push("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -50,12 +71,16 @@ function MainNavigation() {
             {navMenuList &&
               navMenuList.map((item) => <NavMenuItem key={item} link={item} />)}
           </ul>
-          <img
-            onClick={logoutHandler}
-            className={classes["user-image"]}
-            src={user.photo}
-            alt="User"
-          />
+          <div className={classes.signOut}>
+            <img
+              className={classes["user-image"]}
+              src={user.photo}
+              alt="User"
+            />
+            <div className={classes.dropdown}>
+              <span onClick={logoutHandler}>Log out</span>
+            </div>
+          </div>
         </React.Fragment>
       )}
     </header>
