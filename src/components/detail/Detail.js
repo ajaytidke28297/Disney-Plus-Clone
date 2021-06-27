@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import classes from "./Detail.module.css";
 import styled from "styled-components";
 import Image from "../UI/Image";
@@ -11,16 +11,6 @@ function Detail() {
   const movieList = useSelector((state) => state.movie);
 
   const movie = movieList[cat].find((item) => item.id === id);
-  // useEffect(() => {
-  //   db.collection("movies")
-  //     .doc(id)
-  //     .get()
-  //     .then((doc) => {
-  //       if (doc.exists) {
-  //         setMovie(doc.data());
-  //       }
-  //     });
-  // }, [id]);
 
   return (
     <Container>
